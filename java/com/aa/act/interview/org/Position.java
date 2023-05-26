@@ -29,14 +29,17 @@ public class Position {
 	}
 	
 	public void setEmployee(Optional<Employee> employee) {
+
 		this.employee = employee;
 	}
 	
 	public Optional<Employee> getEmployee() {
+
 		return employee;
 	}
 	
 	public boolean isFilled() {
+
 		return employee.isPresent();
 	}
 	
@@ -47,15 +50,18 @@ public class Position {
 	}
 	
 	public boolean removePosition(Position position) {
+
 		return directReports.remove(position);
 	}
 	
 	public Collection<Position> getDirectReports() {
+
 		return Collections.unmodifiableCollection(directReports);
 	}
 
 	@Override
 	public String toString() {
+
 		return title + employee.map(e -> ": " + e.toString()).orElse("");
 	}
 }
